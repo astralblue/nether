@@ -8,9 +8,6 @@ env:
   - TOXENV=py35
   - TOXENV=py34
   - TOXENV=py33
-  - TOXENV=py27
-  - TOXENV=py26
-  - TOXENV=pypy
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox
@@ -29,4 +26,4 @@ deploy:
   on:
     tags: true
     repo: astralblue/nether
-    condition: $TOXENV == py27
+    condition: $TOXENV == py35
