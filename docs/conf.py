@@ -281,3 +281,13 @@ texinfo_documents = [
 intersphinx_mapping = {
         'python': ('https://docs.python.org/3', None),
 }
+
+import sphinx.environment
+
+_original_warn_node = sphinx.environment.BuildEnvironment.warn_node
+
+def _warn_node(self, msg, node, **kwargs):
+    if not msg.startswith('nonlocal image URI found:'):
+        return _original_warn_node(self, msg, node, **kwargs)
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
