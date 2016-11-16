@@ -10,5 +10,6 @@ Sphinx==1.5.2
 cryptography==1.7.2
 PyYAML==3.12
 pytest==3.0.6
+pytest-cov==2.4.0
 alabaster
 sphinx-autodoc-typehints
