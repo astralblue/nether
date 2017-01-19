@@ -2,21 +2,20 @@
 # This file will be regenerated if you run travis_pypi_setup.py
 
 language: python
-python: 3.5
-
-env:
-  - TOXENV=py35
-  - TOXENV=py34
-  - TOXENV=py33
-  - TOXENV=py27
-  - TOXENV=py26
-  - TOXENV=pypy
+python:
+  - 3.3
+  - 3.4
+  - 3.5
+  - 3.5-dev
+  - 3.6
+  - 3.6-dev
+  - 3.7-dev
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox
+install: pip install -U tox-travis
 
 # command to run tests, e.g. python setup.py test
-script: tox -e ${TOXENV}
+script: tox
 
 # After you create the Github repo and add it to Travis, run the
 # travis_pypi_setup.py script to finish PyPI deployment setup
@@ -25,8 +24,20 @@ deploy:
   distributions: sdist bdist_wheel
   user: astralblue
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: !!binary |
+      U0hJT2g4MEZhc0FmQXBEY2o5YTlseWo5WDR3UW5YQWVNSWxSRnY4YXdIem1LaHA3dkJuNzdhRVJh
+      K0VIRFlzZkZkb3FrelhtWktWdEs3YnNFT0o2bkJrTU96a3VRM2p4WTh5SW0xYUtOVnB3WkplRVdE
+      aThyVmx4NlhOdEJKWVJDbmFuZlRCWVZqaWNyRmF6OS9WM0lBMW52UUhaUlNqcUtzTWVrZDVDQmMr
+      cXM5OHY2dW8wanllWFFocGtrb0lSYnBBL01XUm52OWh6dTFiYzZQN0JjUmNuYnZ6YmpHc1czbjNa
+      SWVpeExjMVdocjhHRzhQZm5vd0pJU1N3dkpsL1llVVJSNUg1b2FRY1gzQWZ1RkZ5dXY3cTVXTzNw
+      VWtNdXlJV3d6Z1B5R09jaXl2ZEdYL3Erc21USFkvZkt4NGd4dWZNNlgwa0h0MHFOQnVScW9RSDc0
+      TWsreUFvR1RLbnJ3S0QxbzVPMHI4dlZISWltT2pvRVBPK1g4YzhOaTVNUjRoQ3NWWmNvU3RxNjAr
+      NTJaR0hCSGFpbUxsbGx1WDY5cUFyOWZyQTdqWGtBTnQ0d3ZOSkZSL1pGZDBuUWY2Y1FLYTc2dXdH
+      c2Z6WjZ3QUJQNWxubkNCZjlYMVJWTHI1eHFFY3hYMDYvVEtNYVZRWjNUVHNlMjlWOUdSRGxzQkt4
+      NjdPMlRqRHRzVnhvREhBbGtvVFROM1Y4ZlhtMndUVGxaUVhOenVwMTlYRnJZYWlTVGRYcUkzV3Uw
+      dUNSd2tyRFhTQzhBT3hrWjJWR0hJcFVPOFdWSWtSSE92enhaWVVWWmoya04vMVNvaWl5VXo1ME9H
+      bXZ1Vm1jMlYzQWE0UitGQThKd0dydVcxN0YrZExVZzhIdWRvblZrWWNBZTliQTE3Unl0QUZQN1k9
   on:
     tags: true
     repo: astralblue/nether
-    condition: $TOXENV == py27
+    python: 3.6
