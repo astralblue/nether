@@ -28,8 +28,7 @@ setup(
     packages=[
         'nether',
     ],
-    package_dir={'nether':
-                 'nether'},
+    package_dir={'': 'src'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD license",
