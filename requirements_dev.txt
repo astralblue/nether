@@ -12,4 +12,4 @@ PyYAML==3.12
 pytest==3.0.6
 pytest-cov==2.4.0
 alabaster
-sphinx-autodoc-typehints
+sphinx-autodoc-typehints==1.1.0
