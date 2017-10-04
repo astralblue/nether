@@ -9,7 +9,7 @@ coverage==4.3.4
 Sphinx==1.5.3
 cryptography==1.7.2
 PyYAML==3.12
-pytest==3.0.6
+pytest==3.2.3
 pytest-cov==2.4.0
 alabaster==0.7.10
 sphinx-autodoc-typehints==1.1.0
